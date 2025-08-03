@@ -1,0 +1,11 @@
+# Creating a database named as college.
+CREATE DATABASE college;
+#Then we are using that particular database.
+USE college;
+#And now creating a table named as student..... after creating table then adding the first row which mainly needed.
+CREATE TABLE student(id INT PRIMARY KEY,name VARCHAR(25),age INT NOT NULL);
+#Here (insert) function is used to add data on db
+INSERT INTO student (id,name,age) values(1,"SRK",26);
+INSERT INTO student (id,name,age) values(2,"asd",24);
+# Here (Selcet) function is used to display our database.
+SELECT * FROM student;
