@@ -1,0 +1,41 @@
+CREATE DATABASE school;
+USE school;
+CREATE TABLE student(rollno INT PRIMARY KEY,name VARCHAR(25),marks INT,grade VARCHAR(1),city VARCHAR(20));
+INSERT INTO student(rollno,name,marks,grade,city)
+VALUES
+(20,"Ahmed",94,"A","Chennai"),
+(21,"Babu",74,"B","Mumbai"),
+(22,"Charan",45,"C","Banglore"),
+(23,"David",64,"B","Mumbai"),
+(24,"Fahad",19,"F","Chennai");
+SELECT * FROM student;
+
+
+# Using WHERE Clause based on the above data.
+SELECT * FROM student WHERE marks>80;
+# Another example of WHERE Clasue
+SELECT * FROM student WHERE city="Mumbai";
+
+
+# Using LIMIT Clause based on the above data.
+SELECT * FROM student WHERE marks>70 LIMIT 3;
+# Another example of LIMIT Clasue
+SELECT * FROM student WHERE city="Mumbai" LIMIT 4;
+
+
+# Using ORDER BY Clause based on the above data.
+SELECT * FROM student ORDER BY city ASC;
+# Another example of ORDER BY Clasue
+SELECT * FROM student ORDER BY marks DESC;
+
+
+# Using GROUP BY Clause based on the above data.
+SELECT city,count(name) FROM student GROUP BY city;
+# Another example of GROUP BY Clasue
+SELECT grade,count(rollno) FROM student GROUP BY grade;
+
+
+# Using HAVING Clause based on the above data.
+SELECT count(name),city FROM student GROUP BY city HAVING max(marks)>90;
+# Another example of HAVING Clasue.
+SELECT count(rollno),city FROM student GROUP BY city HAVING max(marks)>90;
