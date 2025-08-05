@@ -1,21 +1,28 @@
 # Creating a database named as college.
 CREATE DATABASE college;
+
 #Then we are using that particular database.
 USE college;
+
 #And now creating a table named as student..... after creating table then adding the first row which mainly needed.
 CREATE TABLE student(id INT PRIMARY KEY,name VARCHAR(25),age INT NOT NULL);
+
 #Here (insert) function is used to add data on db
 INSERT INTO student (id,name,age) values(1,"SRK",26);
 INSERT INTO student (id,name,age) values(2,"asd",24);
+
 # Here (Selcet) function is used to display our database.
 SELECT * FROM student;
 
-
 --------------------------------- ANOTHER DATABASE------------------------------------
 CREATE DATABASE company;
+
 USE company;
+
 create table employee(id int primary key,name varchar(25),salary int not null);
+
 insert into employee(id,name,salary) values(1,"AAKIF",100000);
 insert into employee (id,name,salary) values(2,"zxcvb",200000);
 insert into employee (id,name,salary) values(3,"asdf",300000);
+
 select * from employee;
