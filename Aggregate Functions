@@ -1,0 +1,27 @@
+CREATE DATABASE class;
+USE class;
+CREATE TABLE student(rollno INT PRIMARY KEY,name VARCHAR(25),marks INT,grade VARCHAR(1),city VARCHAR(20));
+INSERT INTO student(rollno,name,marks,grade,city)
+VALUES
+(20,"Ahmed",94,"A","Chennai"),
+(21,"Babu",74,"B","Mumbai"),
+(23,"David",64,"B","Mumbai"),
+(24,"Fahad",19,"F","Chennai");
+SELECT * FROM student;
+
+#-------------------- Aggregate Functions-------------------- 
+
+#1- COUNT() -- this function counts the number of particular column.
+SELECT COUNT(name) FROM student;
+
+#2- MAX()  -- This function will display the maximum value.
+SELECT MAX(marks) FROM student;
+
+#3- MIN()  -- This function will display the minimum value.
+SELECT MIN(marks) FROM student;
+
+#4- SUM() -- This function is used to add the numbers.
+SELECT SUM(marks) FROM student;
+
+#5- AVG() --This function is used to find the average.
+SELECT AVG(marks) FROM student;
