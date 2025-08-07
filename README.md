@@ -1,2 +1,2 @@
-# SQL
+# SQL- SEQUEL
 SQL Projects
