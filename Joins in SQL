@@ -1,0 +1,40 @@
+CREATE DATABASE school;
+USE school;
+CREATE TABLE student(st_id INT ,name VARCHAR(25));
+INSERT INTO student(st_id ,name)
+VALUES
+(20,"Ahmed"),
+(21,"Babu"),
+(23,"David"),
+(24,"Fahad");
+SELECT * FROM student;
+
+
+CREATE TABLE course(st_id INT ,course VARCHAR(25));
+INSERT INTO course(st_id ,course)
+VALUES
+(23,"ENGLISH"),
+(20,"MATH"),
+(22,"COMP_SCI"),
+(27,"SCIENCE");
+SELECT * FROM course;
+
+#----------------------TYPES OF JOINS----------------------
+
+#1) Inner Join-- Return record that have matching values in both table.
+SELECT * FROM student AS s INNER JOIN course AS c ON s.st_id = c.st_id;
+
+#2) Left Join-- Returns all records from the left table, and the matched records from the right table.
+SELECT * FROM student AS s LEFT JOIN course AS c ON s.st_id = c.st_id;
+
+#3) Right Join-- Returns all records from the right table, and the matched records from the left table.
+SELECT * FROM student AS s RIGHT JOIN course AS c ON s.st_id = c.st_id;
+
+#4) Full Join-- Returns all the records when there is a mastch in either left or right table.
+SELECT * FROM student AS s LEFT JOIN course AS c ON s.st_id = c.st_id UNION SELECT * FROM student AS s RIGHT JOIN course AS c ON s.st_id = c.st_id;
+
+#5) Left exclusive Join--
+SELECT * FROM student AS s LEFT JOIN course AS c ON s.st_id = c.st_id WHERE c.st_id IS NULL;
+
+#6) Right exclusive Join--
+SELECT * FROM student AS s RIGHT JOIN course AS c ON s.st_id = c.st_id WHERE s.st_id IS NULL;
